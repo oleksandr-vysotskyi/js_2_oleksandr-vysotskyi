@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: clamp(50px, 3vw, 100px);
+    gap: 25px;
+}
+
+.container, .user-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-block {
+    flex-direction: column;
+    gap: 10px;
+    width: clamp(300px, 40vw, 500px);
+    border: 1px solid #ccc;
+    padding: 10px 5px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: lightcyan;
+}
+
+.container.user-details {
+    justify-content: center;
+    align-items: center;
+}
+
+.user-block.user-details-block {
+    width: clamp(300px, 50vw, 700px);
+    background-color: lavender;
+}
+
+.see-more {
+    display: block;
+    width: 90%;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: clamp(10px, 3vw, 20px) clamp(10px, 3vw, 20px);
+}
+
+.posts li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: clamp(150px, 25vw, 200px);
+    border: 1px solid #ccc;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: lightcyan;
+}
+
+.posts li a {
+    color: red;
+}
+
+.user-block.user-details-block.user-comment-block {
+    background-color: lightskyblue;
+    width: clamp(180px, 20vw, 250px);
+    overflow-wrap: anywhere;
+}
+
+.user-comments-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px 20px;
+    flex-wrap: wrap;
+}
+
+
+
