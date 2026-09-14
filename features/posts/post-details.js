@@ -1,5 +1,5 @@
-import {appendElements, createElement, showError, getIdFromUrl} from "./helper.js";
-import {getPostById, getCommentsByPostId} from "./data.js";
+import {appendElements, createElement, showError, getIdFromUrl} from "../shared/helper.js";
+import {getPostById, getCommentsByPostId} from "../shared/data.js";
 
 
 const currentPostId = getIdFromUrl();
@@ -10,11 +10,11 @@ if (!currentPostId) {
     const container = createElement('div', '', {'class': 'container'});
     appendElements(document.body, container);
 
-    const userPost = await getPostById(currentPostId);
-    const userComments = await getCommentsByPostId(currentPostId);
+    const user = await getPostById(currentPostId);
+    const comments = await getCommentsByPostId(currentPostId);
 
-    renderPostDetails(userPost, container);
-    renderCommentMainInfo(userComments, container);
+    renderPostDetails(user, container);
+    renderCommentMainInfo(comments, container);
 }
 
 
