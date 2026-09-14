@@ -21,7 +21,8 @@ function setInnerText(element, text) {
 }
 
 function getIdFromUrl() {
-    return Number(new URLSearchParams(window.location.search).get('id'));
+    const id = new URLSearchParams(window.location.search).get('id');
+    return id ? Number(id) : null;
 }
 
 function showError(message) {
@@ -30,6 +31,16 @@ function showError(message) {
     appendElements(document.body, error);
 }
 
-export {createElement, appendElements, setInnerText, showError, getIdFromUrl};
+async function safeFetch(url) {
+    try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+    } catch (error) {
+        throw new Error('Server is not responding.');
+    }
+}
+
+export {createElement, appendElements, setInnerText, showError, getIdFromUrl, safeFetch};
 
 

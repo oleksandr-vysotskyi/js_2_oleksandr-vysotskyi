@@ -1,5 +1,5 @@
-import {createElement, appendElements /*setAttribute*/, setInnerText} from "./helper.js";
-import {getUsersData} from "./data.js";
+import {createElement, appendElements, setInnerText} from "../shared/helper.js";
+import {getUsersData} from "../shared/data.js";
 
 const usersObj = await getUsersData();
 
